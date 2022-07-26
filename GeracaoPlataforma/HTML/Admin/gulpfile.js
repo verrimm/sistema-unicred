@@ -228,3 +228,27 @@ gulp.task('build', gulp.series(gulp.parallel('clean:packageLock', 'clean:dist', 
 
 // gulp.task('default', gulp.series(gulp.parallel('fileinclude', 'scss'), gulp.parallel('browsersync', 'watch')));
 gulp.task('default', gulp.series(gulp.parallel('clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs', 'fileinclude', 'scss', 'js', 'jsPages', 'html'), gulp.parallel('browsersync', 'watch')));
+
+const { watch, series } = require('gulp');
+
+function clean(cb) {
+  // body omitted
+  cb();
+}
+
+function javascript(cb) {
+  // body omitted
+  cb();
+}
+
+function css(cb) {
+  // body omitted
+  cb();
+}
+
+exports.default = function() {
+  // You can use a single task
+  watch('src/*.css', css);
+  // Or a composed task
+  watch('src/*.js', series(clean, javascript));
+};

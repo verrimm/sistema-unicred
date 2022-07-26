@@ -2819,8 +2819,8 @@ input[switch] {
 input[switch] + label {
   font-size: 1em;
   line-height: 1;
-  width: 56px;
-  height: 24px;
+  width: 20px !important; /*56px;*/
+  height: 20px !important; /*24px;*/
   background-color: #ced4da;
   background-image: none;
   border-radius: 2rem;
